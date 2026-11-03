@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="QUEENORA FASHION — Discover dresses, tops, kurtis and party wear.">
+<title>QUEENORA FASHION | Style Your Beauty</title>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#c65d83;--deep:#762c4c;--blush:#fff1f5;--ink:#282128;--muted:#817780;--line:#f0e5e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,select{font:inherit}
+.topbar{background:var(--deep);color:#fff;text-align:center;padding:9px;font-size:11px;letter-spacing:1.4px}
+header{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid var(--line);position:sticky;top:0;background:#ffffffed;backdrop-filter:blur(12px);z-index:10}
+.logo{font:700 24px 'Playfair Display';letter-spacing:1px;color:var(--deep)}.logo small{display:block;text-align:center;font:9px 'DM Sans';letter-spacing:4px;color:var(--pink)}
+nav{display:flex;gap:24px;font-size:12px;font-weight:700}.logo span{color:var(--pink)}nav a:hover{color:var(--pink)}
+.action{border:1px solid #ead5de;background:white;color:var(--deep);padding:10px 14px;border-radius:25px;cursor:pointer}
+.hero{margin:20px auto 0;width:92%;min-height:430px;display:grid;grid-template-columns:1fr 1fr;background:#fae5ec}
+.hero-copy{padding:55px 9%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.eyebrow{font-size:10px;letter-spacing:3px;color:var(--pink);font-weight:700}
+h1{font:700 clamp(40px,5vw,66px)/1.08 'Playfair Display';color:#54253b;margin:16px 0}.hero p{line-height:1.8;color:#765d69;max-width:420px;font-size:14px}
+.primary{background:var(--deep);color:white;border:0;padding:14px 22px;margin-top:14px;cursor:pointer;font-weight:700;letter-spacing:.5px}.hero-image{background:url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1100&q=85') center 30%/cover;min-height:430px}
+.trust{display:flex;justify-content:center;gap:40px;padding:20px 10px;border-bottom:1px solid var(--line);font-size:12px;color:#705c67}
+.section{padding:58px 5%}.heading{text-align:center;margin-bottom:26px}.heading h2{font:700 36px 'Playfair Display';color:#54253b;margin:8px}.heading p{font-size:13px;color:var(--muted)}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:20px 0 28px}.filter{border:1px solid #e9d5de;background:#fff;padding:9px 15px;color:var(--deep);cursor:pointer;border-radius:22px;font-size:12px}.filter.active,.filter:hover{background:var(--deep);color:white}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.product{border:1px solid var(--line);padding:9px;position:relative;min-width:0}.product img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#f8eaf0;display:block}.tag{position:absolute;top:16px;left:15px;background:#fff1f5;color:var(--deep);padding:5px 8px;font-size:9px;letter-spacing:1px}.product h3{font-size:13px;margin:10px 0 5px}.price{font-weight:700;color:var(--deep);font-size:14px}.old{font-size:11px;color:#aaa;text-decoration:line-through;margin-left:5px}
+.size-label{font-size:10px;color:#74636c;margin:10px 0 4px;display:block}.size-select{width:100%;padding:8px;border:1px solid #e6d7de;background:#fff;color:#45343d;font-size:12px}.add{width:100%;padding:10px;margin-top:9px;background:white;border:1px solid var(--deep);color:var(--deep);font-size:10px;font-weight:700;letter-spacing:.7px;cursor:pointer}.add:hover{background:var(--deep);color:white}
+.note{background:#fff5f8;border:1px solid #f1dce5;padding:14px 16px;margin:0 auto 25px;max-width:900px;color:#725b67;font-size:12px;line-height:1.6}
+.banner{margin:0 5% 55px;background:#f9e7ed;padding:36px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px}.banner h2{font:700 30px 'Playfair Display';color:#54253b;margin:7px 0}.banner p{font-size:13px;color:#765d69}
+footer{background:#2e2028;color:#fff;padding:40px 5% 18px}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.foot strong{font:700 25px 'Playfair Display'}.foot p,.foot a{color:#cbbdc4;font-size:12px;line-height:1.8}.foot a{display:block}.copy{text-align:center;border-top:1px solid #594751;margin-top:25px;padding-top:15px;color:#cbbdc4;font-size:11px}
+.panel{position:fixed;right:-430px;top:0;width:min(410px,94vw);height:100%;background:#fff;z-index:31;padding:22px;box-shadow:-8px 0 30px #0002;transition:.25s;display:flex;flex-direction:column}.panel.open{right:0}.overlay{display:none;position:fixed;inset:0;background:#0007;z-index:30}.overlay.show{display:block}.panelhead{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px}.items{flex:1;overflow:auto}.item{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.item img{width:64px;height:78px;object-fit:cover}.item small{display:block;color:var(--muted);margin-top:5px}.remove{border:0;background:none;color:var(--pink);padding:6px 0;cursor:pointer}.total{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;font-weight:700}.empty{text-align:center;color:var(--muted);padding:35px 0;font-size:13px}
+
+.login-overlay{display:none;position:fixed;inset:0;background:#21131b99;z-index:50;align-items:center;justify-content:center;padding:16px}
+.login-overlay.show{display:flex}.login-box{width:min(430px,100%);background:#fff;padding:28px;border-radius:8px;box-shadow:0 20px 70px #0003;position:relative}
+.login-close{position:absolute;right:14px;top:12px;border:0;background:none;font-size:22px;color:#765d69;cursor:pointer}
+.login-box h2{font:700 28px 'Playfair Display';color:#54253b;margin:5px 0 8px}.login-box p{font-size:12px;color:#817780;line-height:1.6}
+.login-tabs{display:flex;gap:8px;margin:20px 0}.login-tab{flex:1;border:1px solid #ead5de;background:#fff;padding:10px;color:#762c4c;cursor:pointer}.login-tab.active{background:#762c4c;color:#fff}
+.login-field{width:100%;padding:13px;border:1px solid #e6d7de;margin:6px 0 12px;font:14px 'DM Sans';border-radius:3px}
+.login-action{width:100%;padding:13px;background:#762c4c;color:#fff;border:0;font-weight:700;cursor:pointer;margin-top:7px}
+.google-action{width:100%;padding:12px;background:white;color:#45343d;border:1px solid #ded5d9;font-weight:600;cursor:pointer;margin-top:10px}
+.login-note{font-size:11px!important;background:#fff5f8;padding:10px;border:1px solid #f1dce5;margin-top:15px}
+.login-status{font-size:12px;color:#762c4c;min-height:18px}
+@media(max-width:560px){.login-box{padding:23px 18px}.header-actions{gap:5px}}
+
+@media(max-width:850px){nav{display:none}.hero{grid-template-columns:1fr}.hero-image{grid-row:1;min-height:300px}.hero-copy{padding:35px 8%}.products{grid-template-columns:repeat(3,minmax(0,1fr))}.trust{gap:14px;flex-wrap:wrap}.foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}}
+@media(max-width:560px){header{height:66px;padding:0 4%}.logo{font-size:20px}.hero{width:94%;margin-top:10px}.hero-image{min-height:260px}.section{padding:42px 4%}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product{padding:7px}.product h3{font-size:12px}.heading h2{font-size:30px}.banner{margin:0 4% 40px;display:block;padding:28px 6%}.banner .primary{margin-top:12px}.trust{font-size:10px}.foot{gap:15px}}
+</style>
+</head>
+<body>
+<div class="topbar">NEW COLLECTION • FIND YOUR STYLE • SHOP ONLINE</div>
+<header>
+<a class="logo" href="#">QUEENORA <span>FASHION</span><small>STYLE YOUR BEAUTY</small></a>
+<nav><a href="#home">HOME</a><a href="#categories">CATEGORIES</a><a href="#collection">SHOP 100+</a><a href="#contact">CONTACT</a></nav>
+<div style="display:flex;gap:8px;align-items:center"><button class="action" onclick="openLogin()">LOGIN</button><button class="action" onclick="toggleCart()">BAG (<span id="count">0</span>)</button></div>
+</header>
+<main id="home">
+<div class="hero"><div class="hero-copy"><div class="eyebrow">THE NEW SEASON EDIT</div><h1>Dress like<br>you mean it.</h1><p>Explore beautiful styles for everyday moments, celebrations and everything in between. Find a look that feels like you.</p><a class="primary" href="#collection">EXPLORE COLLECTION →</a></div><div class="hero-image" role="img" aria-label="Women's fashion collection"></div></div>
+<div class="trust"><span>✦ Curated Styles</span><span>♡ Sizes XS to XXL</span><span>✧ Easy Online Checkout</span></div>
+<section class="section" id="categories"><div class="heading"><div class="eyebrow">FIND YOUR LOOK</div><h2>Shop by Category</h2><p>From everyday essentials to occasion wear.</p></div><div class="filters" id="filters"></div></section>
+<section class="section" id="collection" style="padding-top:0"><div class="heading"><div class="eyebrow">THE QUEENORA EDIT</div><h2>100+ Style Collection</h2><p>Choose your favourite size and colour, then add it to your bag.</p></div>
+<div class="note"><b>Size guide:</b> Available size options are XS, S, M, L, XL, XXL and Free Size (where applicable). Please verify actual garment measurements, stock and pricing before publishing this collection. Product photos, names and prices shown here are starter samples and must be replaced/verified against your real stock.</div>
+<div class="products" id="products"></div></section>
+<div class="banner"><div><div class="eyebrow">YOUR STYLE, YOUR RULES</div><h2>Found your favourite?</h2><p>Choose your favourite pieces and place your order securely through the website checkout.</p></div><a class="primary" href="#collection">SHOP THE COLLECTION →</a></div>
+</main>
+<footer id="contact"><div class="foot"><div><strong>QUEENORA FASHION</strong><p>STYLE YOUR BEAUTY<br>A fashion destination for looks that make you feel confident and beautifully you.</p></div><div><b>EXPLORE</b><p><a href="#home">Home</a><a href="#categories">Categories</a><a href="#collection">Collection</a></p></div><div><b>CONTACT</b><p><a href="admin.html">Admin Panel</a><p>Customer support: 6377148964</p></p></div></div><div class="copy">© 2026 QUEENORA FASHION. All rights reserved.</div></footer>
+<div class="overlay" id="overlay" onclick="toggleCart()"></div><aside class="panel" id="panel"><div class="panelhead"><b>YOUR SHOPPING BAG</b><button class="action" onclick="toggleCart()">CLOSE ✕</button></div><div class="items" id="items"><div class="empty">Your bag is waiting for something lovely.</div></div><div><div class="total"><span>Subtotal</span><span id="total">₹0</span></div><button class="primary" style="width:100%" onclick="checkout()">PROCEED TO CHECKOUT →</button></div></aside>
+
+<div class="login-overlay" id="loginOverlay" onclick="if(event.target===this)closeLogin()">
+ <div class="login-box">
+  <button class="login-close" onclick="closeLogin()" aria-label="Close">×</button>
+  <div class="eyebrow">WELCOME TO QUEENORA</div>
+  <h2>Sign in to your style</h2>
+  <p>Choose mobile number or email to continue.</p>
+  <div class="login-tabs">
+   <button class="login-tab active" id="phoneTab" onclick="showLoginMode('phone')">Mobile</button>
+   <button class="login-tab" id="emailTab" onclick="showLoginMode('email')">Email / Gmail</button>
+  </div>
+  <div id="phoneLogin">
+   <label class="size-label" for="loginPhone">MOBILE NUMBER</label>
+   <input class="login-field" id="loginPhone" type="tel" inputmode="numeric" maxlength="10" placeholder="Enter 10-digit mobile number">
+   <button class="login-action" onclick="startPhoneLogin()">CONTINUE WITH MOBILE</button>
+  </div>
+  <div id="emailLogin" style="display:none">
+   <label class="size-label" for="loginEmail">EMAIL ADDRESS</label>
+   <input class="login-field" id="loginEmail" type="email" placeholder="you@example.com">
+   <button class="login-action" onclick="startEmailLogin()">CONTINUE WITH EMAIL</button>
+   <button class="google-action" onclick="startGoogleLogin()">Continue with Google</button>
+  </div>
+  <div class="login-status" id="loginStatus"></div>
+  <p class="login-note">Login is currently a design preview. Secure OTP and Google sign-in need Firebase Authentication setup. No customer data is collected or stored by this preview.</p>
+ </div>
+</div>
+
+
+<div class="login-overlay" id="checkoutOverlay" onclick="if(event.target===this)closeCheckout()">
+ <div class="login-box" style="max-width:560px;text-align:left">
+  <button class="login-close" onclick="closeCheckout()" aria-label="Close">×</button>
+  <div class="eyebrow">QUEENORA FASHION</div><h2>Complete Your Order</h2>
+  <p>Your order details will be submitted on this website.</p>
+  <div id="checkoutSummary" class="note"></div>
+  <label class="size-label">FULL NAME</label><input class="login-field" id="buyerName" placeholder="Enter your name">
+  <label class="size-label">MOBILE NUMBER</label><input class="login-field" id="buyerPhone" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number">
+  <label class="size-label">DELIVERY ADDRESS</label><textarea class="login-field" id="buyerAddress" rows="3" placeholder="House / street / area / city / state"></textarea>
+  <label class="size-label">PIN CODE</label><input class="login-field" id="buyerPin" inputmode="numeric" maxlength="6" placeholder="6-digit PIN code">
+  <button class="login-action" onclick="placeOrder()">PLACE ORDER</button>
+  <div class="login-status" id="checkoutStatus"></div>
+  <p class="login-note">Your order details are used to process delivery. Do not submit test details for a real order.</p>
+ </div>
+</div>
+
+<script>
+const photos=[
+"photo-1595777457583-95e059d581b8","photo-1566174053879-31528523f8ae","photo-1610030469983-98e550d6193c","photo-1539109136881-3be0616acf4b",
+"photo-1551163943-3f6a855d1153","photo-1583391733956-6c78276477e9","photo-1584865288642-42078afe6942","photo-1591369822096-ffd140ec948f",
+"photo-1483985988355-763728e1935b","photo-1490481651871-ab68de25d43d","photo-1485230895905-ec40ba36b9bc","photo-1529139574466-a303027c1d8b",
+"photo-1534528741775-53994a69daeb","photo-1515886657613-9f3515b0c78f","photo-1524504388940-b1c1722653e1","photo-1525507119028-ed4c629a60a3",
+"photo-1544441893-675973e31985","photo-1551232864-3f0890e580d9","photo-1598554747436-c9293d6a588f","photo-1600210492486-724fe5c67fb0"
+];
+const cats=["Dresses","Western Wear","Tops","Kurtis","Ethnic Wear","Party Wear"];
+const names=["Floral Day Dress","Satin Evening Dress","Classic Midi Dress","Elegant Maxi Dress","Everyday Chic Top","Soft Cotton Kurti","Statement Party Dress","Printed Co-ord Set","Graceful Anarkali","Casual Summer Dress","Modern Wrap Dress","Embroidered Kurti","Weekend Style Top","Festive Ethnic Set","Chic Shirt Dress","Ruffle Sleeve Dress","Minimalist Tunic","Flared Kurti"];
+const products=Array.from({length:108},(_,i)=>{let cat=cats[i%cats.length],p=799+((i*137)%15)*100;return{id:i+1,name:names[i%names.length]+" "+String(i+1).padStart(3,"0"),cat,price:p,old:p+300,img:"https://images.unsplash.com/"+photos[i%photos.length]+"?auto=format&fit=crop&w=650&q=80",tag:i%9===0?"NEW":i%7===0?"TRENDING":""}});
+let cart=[],active="All";
+const filterRoot=document.getElementById("filters");
+filterRoot.innerHTML=["All",...cats].map(c=>`<button class="filter ${c==="All"?"active":""}" onclick="setFilter('${c}',this)">${c}</button>`).join("");
+function setFilter(c,el){active=c;document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));el.classList.add("active");renderProducts()}
+function renderProducts(){let list=active==="All"?products:products.filter(p=>p.cat===active);document.getElementById("products").innerHTML=list.map(p=>`<article class="product"><span class="tag">${p.tag||p.cat.toUpperCase()}</span><img loading="lazy" src="${p.img}" alt="${p.name}"><h3>${p.name}</h3><div><span class="price">₹${p.price.toLocaleString("en-IN")}</span><span class="old">₹${p.old.toLocaleString("en-IN")}</span></div><label class="size-label" for="size-${p.id}">SELECT SIZE</label><select class="size-select" id="size-${p.id}"><option value="">Choose size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>Free Size</option></select><label class="size-label" for="color-${p.id}">SELECT COLOUR</label><select class="size-select" id="color-${p.id}"><option value="">Choose colour</option><option>Black</option><option>White</option><option>Red</option><option>Pink</option><option>Blue</option><option>Green</option><option>Yellow</option><option>Purple</option><option>Maroon</option><option>Beige</option><option>Brown</option><option>Multi-colour</option></select><button class="add" onclick="add(${p.id})">ADD TO BAG +</button></article>`).join("")}
+function add(id){let p=products.find(x=>x.id===id),size=document.getElementById("size-"+id).value,color=document.getElementById("color-"+id).value;if(!size){alert("Please select a size first.");return}if(!color){alert("Please select a colour first.");return}let old=cart.find(x=>x.id===id&&x.size===size&&x.color===color);if(old)old.qty++;else cart.push({...p,size,color,qty:1});renderCart();toggleCart(true)}
+function renderCart(){document.getElementById("count").textContent=cart.reduce((s,p)=>s+p.qty,0);document.getElementById("total").textContent="₹"+cart.reduce((s,p)=>s+p.price*p.qty,0).toLocaleString("en-IN");document.getElementById("items").innerHTML=cart.length?cart.map(p=>`<div class="item"><img src="${p.img}" alt=""><div><b>${p.name}</b><small>Size: ${p.size} · Colour: ${p.color} · Qty: ${p.qty}<br>₹${(p.price*p.qty).toLocaleString("en-IN")}</small><button class="remove" onclick="removeItem(${p.id},'${p.size}','${p.color}')">Remove</button></div></div>`).join(""):'<div class="empty">Your bag is waiting for something lovely.</div>'}
+function removeItem(id,size,color){cart=cart.filter(p=>!(p.id===id&&p.size===size&&p.color===color));renderCart()}
+function toggleCart(force){let open=force===true||!document.getElementById("panel").classList.contains("open");document.getElementById("panel").classList.toggle("open",open);document.getElementById("overlay").classList.toggle("show",open)}
+function checkout(){if(!cart.length){alert("Please add products to your bag first.");return}document.getElementById("checkoutSummary").innerHTML=cart.map(p=>`${p.name} · ${p.size} · ${p.color} · Qty ${p.qty} · ₹${p.price*p.qty}`).join("<br>")+`<hr><b>Total: ₹${cart.reduce((s,p)=>s+p.price*p.qty,0).toLocaleString("en-IN")}</b>`;document.getElementById("checkoutOverlay").classList.add("show");document.getElementById("checkoutStatus").textContent=""}
+function closeCheckout(){document.getElementById("checkoutOverlay").classList.remove("show")}
+async function placeOrder(){const name=document.getElementById("buyerName").value.trim(),phone=document.getElementById("buyerPhone").value.trim(),address=document.getElementById("buyerAddress").value.trim(),pin=document.getElementById("buyerPin").value.trim();const status=document.getElementById("checkoutStatus");if(!name||!/^[6-9]\d{9}$/.test(phone)||!address||!/^[0-9]{6}$/.test(pin)){status.textContent="Please enter valid name, 10-digit mobile, full address and 6-digit PIN code.";return}if(!window.saveQueenoraOrder){status.textContent="Order system is not connected yet. Please try again later.";return}const order={name,phone,address,pin,items:cart.map(({id,name,price,size,color,qty})=>({id,name,price,size,color,qty})),total:cart.reduce((s,p)=>s+p.price*p.qty,0),status:"Pending"};const button=document.querySelector('#checkoutOverlay .login-action');button.disabled=true;button.textContent="SUBMITTING...";try{const id=await window.saveQueenoraOrder(order);status.textContent="Your order has been received! Order ID: "+id;cart=[];renderCart();setTimeout(()=>{closeCheckout();toggleCart(false)},2200)}catch(e){console.error(e);status.textContent="Order could not be submitted. Please check your internet connection and try again."}finally{button.disabled=false;button.textContent="PLACE ORDER"}}
+
+function openLogin(){document.getElementById("loginOverlay").classList.add("show");document.getElementById("loginStatus").textContent=""}
+function closeLogin(){document.getElementById("loginOverlay").classList.remove("show")}
+function showLoginMode(mode){
+ const phone=mode==="phone";
+ document.getElementById("phoneLogin").style.display=phone?"block":"none";
+ document.getElementById("emailLogin").style.display=phone?"none":"block";
+ document.getElementById("phoneTab").classList.toggle("active",phone);
+ document.getElementById("emailTab").classList.toggle("active",!phone);
+ document.getElementById("loginStatus").textContent="";
+}
+function startPhoneLogin(){
+ const v=document.getElementById("loginPhone").value.trim();
+ document.getElementById("loginStatus").textContent=/^[6-9]\d{9}$/.test(v)?"Mobile number entered. Connect Firebase Phone Authentication to send a real OTP.":"Please enter a valid 10-digit Indian mobile number.";
+}
+function startEmailLogin(){
+ const v=document.getElementById("loginEmail").value.trim();
+ document.getElementById("loginStatus").textContent=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)?"Email entered. Connect Firebase Email Authentication to send a secure sign-in link.":"Please enter a valid email address.";
+}
+function startGoogleLogin(){
+ document.getElementById("loginStatus").textContent="Google sign-in button is ready in the design. Connect your Firebase project and enable Google provider to activate it.";
+}
+
+renderProducts();
+</script>
+<script type="module" src="./firebase-store.js"></script>
+</body></html>

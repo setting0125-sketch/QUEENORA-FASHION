@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'setting0125@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+    match /orders/{orderId} {
+      // Customers may submit a new order only. They cannot read or modify orders.
+      allow create: if request.auth == null
+        && request.resource.data.keys().hasAll(['name','phone','address','pin','items','total','status','createdAt'])
+        && request.resource.data.keys().hasOnly(['name','phone','address','pin','items','total','status','createdAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() >= 2 && request.resource.data.name.size() <= 80
+        && request.resource.data.phone is string && request.resource.data.phone.matches('^[6-9][0-9]{9}$')
+        && request.resource.data.address is string && request.resource.data.address.size() >= 5 && request.resource.data.address.size() <= 500
+        && request.resource.data.pin is string && request.resource.data.pin.matches('^[0-9]{6}$')
+        && request.resource.data.items is list && request.resource.data.items.size() >= 1 && request.resource.data.items.size() <= 30
+        && request.resource.data.total is number && request.resource.data.total >= 1 && request.resource.data.total <= 500000
+        && request.resource.data.status == 'Pending'
+        && request.resource.data.createdAt == request.time;
+      allow read: if isAdmin();
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+        && request.resource.data.status in ['Pending','Confirmed','Shipped','Delivered','Cancelled'];
+      allow delete: if isAdmin();
+    }
+  }
+}
